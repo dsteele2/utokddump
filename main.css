@@ -1,0 +1,28 @@
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+th {
+  color: rgb(15, 5, 5);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  width: fit-content;
+  height: fit-content;
+  vertical-align: middle;
+  
+}
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+button{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5 px;
+    font-size: 1px;
+    text-align: center;
+    border: none;
+}
