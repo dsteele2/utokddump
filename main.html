@@ -7,11 +7,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel ="stylesheet" href="main.css">
     <title>Uto KD Dump</title>
   </head>
   <body>
     <h1>Utopia Kingdom List</h1>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
 
     <link
       rel="stylesheet"
@@ -19,69 +20,37 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
 
-    <style>
-      h1 {
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        text-align: center;
-      }
-      th {
-        color: rgb(15, 5, 5);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: medium;
-      }
-      table {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: small;
-      }
-    </style>
 
-    <table class="table table-striped">
+
+
+    <table class="table table-sortable">
       <tr class="bg-info">
         <th>Location</th>
         <th>Name</th>
-        <th>NW</th>
+        <th><button id="sortup">&#8597</button>
+        
+        NW
+        </th>
         <th>Land</th>
         <th>Provs</th>
         <th>Stance</th>
         <th>Won/Total Wars</th>
       </tr>
+        
+      <script src="main.js"></script>
 
       <tbody id="myTable"></tbody>
     </table>
 
     <script>
-      let SortDirection = false;
-      var myArray = [];
 
-      $.ajax({
-        method: "GET",
-        url: "https://utopia-game.com/wol/game/kingdoms_dump/?key=l1FdkNfdklAs",
-        success: function (response) {
-          myArray = response;
+    
 
-          buildTable(myArray);
-          console.log(myArray);
-        },
-      });
-
-      function buildTable(data) {
-        var table = document.getElementById("myTable");
-
-        for (var i = 1; i < data.length - 1; i++) {
-          var row = `<tr>
-							<td>${data[i].loc}</td>
-							<td>${data[i].name}</td>
-							<td>${data[i].nw}</td>
-							<td>${data[i].land}</td>
-							<td>${data[i].count}</td>
-							<td>${data[i].stance}</td>
-							<td>${data[i].wars}</td>
-					  </tr>`;
-          table.innerHTML += row;
-        }
-      }
     </script>
+    
   </body>
 </html>
