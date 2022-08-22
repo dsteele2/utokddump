@@ -6,7 +6,8 @@ function buildTable(sortdirection='asc',sortCol='sortNW') {
   $(document).ready(function(){
   $.ajax({
   method: "GET",
-  url: "https://utopia-game.com/wol/game/kingdoms_dump/?key=l1FdkNfdklAs",
+  Headers:{'Access-Control-Allow-Origin' : 'https://utopia-game.com'},
+  url: "https://api.allorigins.win/raw?url=https://utopia-game.com/wol/game/kingdoms_dump/?key=l1FdkNfdklAs",
   success: 
   function (response) {
     
@@ -53,9 +54,16 @@ function buildTable(sortdirection='asc',sortCol='sortNW') {
         });
       break;
       case 'sortStance':
-        response.sort(function(a, b) {
-          return a.stance - b.stance
-        });
+        response.sort(function(a,b){
+          console.log(typeof(a.stance))
+          return 
+          
+        }
+        
+        
+        
+        )
+        
       break;
 
 
@@ -114,7 +122,10 @@ function modify_data(response=[]){
     else{
       response[i].WINPERCENT=(parseFloat(response[i].WARWINS)/parseFloat(response[i].TOTALWARS)*100).toFixed(2)
     }
-    
+    if (response[i].stance!=="Normal"){
+      response[i].stance="War"
+    }
+   
 
 
   }
