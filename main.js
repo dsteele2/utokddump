@@ -6,7 +6,7 @@ function buildTable(sortdirection='asc',sortCol='sortNW') {
   $(document).ready(function(){
   $.ajax({
   method: "GET",
-  url: "https://api.allorigins.win/raw?url=https://utopia-game.com/wol/game/kingdoms_dump/?key=l1FdkNfdklAs",
+  url: "https://api.codetabs.com/v1/proxy/?quest=https://utopia-game.com/wol/game/kingdoms_dump/?key=l1FdkNfdklAs",
   success: 
   function (response) {
     
